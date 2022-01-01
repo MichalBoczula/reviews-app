@@ -1,6 +1,14 @@
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 
-export const Review = ({ name, job, image, text }) => {
+export const Review = ({
+  name,
+  job,
+  image,
+  text,
+  drawRev,
+  nextRev,
+  prevRev,
+}) => {
   return (
     <article className="card">
       <div className="cardImgContainer">
@@ -15,11 +23,13 @@ export const Review = ({ name, job, image, text }) => {
         <p className="cardContentText">{text}</p>
       </div>
       <div className="cardBtnContainer">
-        <FaChevronLeft className="cardBtn" />
-        <FaChevronRight className="cardBtn" />
+        <FaChevronLeft className="cardBtn" onClick={() => prevRev()} />
+        <FaChevronRight className="cardBtn" onClick={() => nextRev()} />
       </div>
       <div className="cardRandomBtnContainer">
-        <button className="randomBtn">Random review</button>
+        <button className="randomBtn" onClick={() => drawRev()}>
+          Random review
+        </button>
       </div>
     </article>
   );
