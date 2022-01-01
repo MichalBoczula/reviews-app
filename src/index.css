@@ -1,13 +1,173 @@
-body {
+*,
+::after,
+::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--clr-pink);
+  color: var(--clr-grey-9);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(197, 211, 252);
+}
+
+.card {
+  width: 90%;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  max-width: 500px;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.card img {
+  border-radius: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cardImgContainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+}
+
+.cardImgContainer::after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  background-color: rgb(89, 86, 255);
+  position: absolute;
+  top: -0.5rem;
+  right: -1rem;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.cardContentContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.cardContentName {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: rgb(89, 86, 255);
+}
+
+.cardContentJob {
+  font-size: 18px;
+  color: rgb(165, 165, 165);
+}
+
+.cardContentText {
+  font-size: 14px;
+  color: rgb(139, 139, 139);
+}
+
+.cardImgQuotesContaner {
+  background-color: rgb(89, 86, 255);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  position: absolute;
+  top: 0px;
+}
+
+.cardImgQuotes {
+  font-size: 30px;
+  color: aliceblue;
+}
+
+.cardBtn {
+  color: rgb(89, 86, 255);
+  font-size: 30px;
+  transition: all linear 0.3s;
+}
+
+.cardBtnContainer,
+.cardRandomBtnContainer {
+  margin: 10px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBtn:hover {
+  color: rgb(23, 19, 253);
+  cursor: pointer;
+}
+
+.randomBtn {
+  color: rgb(89, 86, 255);
+  font-size: 14px;
+  border: 2px solid rgb(89, 86, 255);
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  font-weight: 700;
+  transition: all linear 0.3s;
+}
+
+.randomBtn:hover {
+  background-color: rgb(89, 86, 255);
+  color: aliceblue;
+  cursor: pointer;
 }
