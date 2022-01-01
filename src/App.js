@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { data } from "./data.js";
 import { Review } from "./Reviews.js";
+import { Context } from "./Context";
 
 function App() {
   const [actualId, useActualId] = useState(0);
-  const ele = data[actualId];
-
-  const DrawReview = () => {
+  const GetActualEle = () => {
+    return data[actualId];
+  };
+  const DrawRev = () => {
     useActualId(Math.floor(Math.random() * 4));
   };
 
@@ -32,16 +34,11 @@ function App() {
   };
 
   return (
-    <section className="container">
-      <Review
-        key={ele.id}
-        {...ele}
-        drawRev={DrawReview}
-        nextRev={NextRev}
-        prevRev={PrevRev}
-      ></Review>
-      ;
-    </section>
+    <Context.Provider value={{ GetActualEle, DrawRev, NextRev, PrevRev }}>
+      <section className="container">
+        <Review></Review>
+      </section>
+    </Context.Provider>
   );
 }
 
